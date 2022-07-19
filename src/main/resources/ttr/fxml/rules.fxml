@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.image.ImageView?>
+
+<?import javafx.scene.image.Image?>
+<?import java.net.*?>
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="ttr.Views.RulesView" alignment="CENTER" styleClass="background" prefHeight="807" prefWidth="594">
+    <ScrollPane fx:id="scrollpane" styleClass="background" prefWidth="594" prefHeight="807">
+        <content>
+            <ImageView>
+                <image>
+                    <Image url="@te_rules_en.png"></Image>
+                </image>
+            </ImageView>
+        </content>
+    </ScrollPane>
+    <ImageView onMouseClicked="#backClicked">
+        <image>
+            <Image url="@../menu/backButton.png"></Image>
+        </image>
+    </ImageView>
+
+    <stylesheets>
+        <URL value="@../css/rules.css"/>
+    </stylesheets>
+</VBox>
+

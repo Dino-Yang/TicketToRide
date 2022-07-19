@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?xml-stylesheet type="text/css" href="mytest.css"?>
+
+<!-- There should be a 'cancel' button for in case the user doesn't have enough cards. -->
+<!-- If the action is cancelled, the user should come back to the map screen with other possibilities. -->
+<!-- This is also a solution for in case the user wants to double-check his/her strategy with TrainCards serperation. -->
+
+<?import javafx.scene.layout.HBox?>
+<BorderPane fx:id="borderPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ttr.Views.SelectTrainCardView">
+    <top>
+
+    </top>
+    <bottom>
+        <HBox>
+            <Button onAction="#cancelSelectedCards" text="Cancel"/>
+            <Button fx:id="confirmButton" disable="true" onMouseClicked="#confirmSelectedCards"
+                    BorderPane.alignment="CENTER">Bevestig
+            </Button>
+        </HBox>
+    </bottom>
+</BorderPane>

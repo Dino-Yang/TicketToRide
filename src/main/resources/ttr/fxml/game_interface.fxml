@@ -1,0 +1,1599 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="ttr.Views.BoardView" styleClass="background">
+    <stylesheets>
+        <URL value="@../css/gameLoginStart.css"/>
+    </stylesheets>
+    <AnchorPane fx:id="boardPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                prefHeight="670.0" prefWidth="1006.0">
+
+        <children>
+            <ImageView fitHeight="670.0" fitWidth="1006.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                <image>
+                    <Image url="@euMap.jpg"/>
+                </image>
+            </ImageView>
+            <Label fx:id="CurrentPlayer" alignment="TOP_LEFT" layoutX="3.0" layoutY="37.0" text="Current Player:"
+                   wrapText="true" prefHeight="200" prefWidth="100">
+            </Label>
+            <Group fx:id="groupgroup">
+                <Group fx:id="Edinburgh_London_R">
+                    <Rectangle fx:id="Edinburgh_London_R1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="159.0" layoutY="35.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-22.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Edinburgh_London_R2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="172.0" layoutY="73.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-22.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Edinburgh_London_R4" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="201.0" layoutY="148.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-23.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Edinburgh_London_R3" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="186.0" layoutY="111.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-23.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Edinburgh_London_L">
+                    <Rectangle fx:id="Edinburgh_London_L1" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="144.0"
+                               layoutY="44.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-24.4" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Edinburgh_London_L2" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="159.0"
+                               layoutY="79.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-25.0" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Edinburgh_London_L3" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="174.0"
+                               layoutY="117.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-22.4" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Edinburgh_London_L4" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="187.0"
+                               layoutY="148.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-30.1" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Brest_Diepe">
+                    <Rectangle fx:id="Brest_Diepe_1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="127.0" layoutY="275.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="61.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brest_Diepe_2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="45.0"
+                               layoutX="165.0" layoutY="258.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="88.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Diepe_Paris">
+                    <Rectangle fx:id="Diepe_Paris_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="219.0" layoutY="288.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Brest_Paris">
+                    <Rectangle fx:id="Brest_Paris_1" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="133.0"
+                               layoutY="297.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-81.9" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Brest_Paris_2" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="171.0"
+                               layoutY="302.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="98.1" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Brest_Paris_3" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="208.0"
+                               layoutY="305.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-83.7" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Diepe_Bruxelles">
+                    <Rectangle fx:id="Diepe_Bruxelles_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="223.0" layoutY="255.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="55.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Diepe_Bruxelles_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="257.0" layoutY="230.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="55.099999999999994"
+                               stroke="BLACK" strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Amsterdam_Bruxelles">
+                    <Rectangle fx:id="Amsterdam_Bruxelles_1" arcHeight="5.0" arcWidth="5.0" height="30.0"
+                               layoutX="293.0"
+                               layoutY="203.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="28.299999999999997" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="London_Diepe_L">
+                    <Rectangle fx:id="London_Diepe_L2" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="192.0" layoutY="237.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="2.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="London_Diepe_L1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="192.0" layoutY="199.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="8.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="London_Diepe_R">
+                    <Rectangle fx:id="London_Diepe_R1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="208.0" layoutY="201.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="4.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="London_Diepe_R2" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="202.0" layoutY="237.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="4.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="London_Amsterdam">
+                    <Rectangle fx:id="London_Amsterdam_1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="236.0" layoutY="171.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="92.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="London_Amsterdam_2" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="34.0"
+                               layoutX="272.0" layoutY="173.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Bruxelles_Paris_R">
+                    <Rectangle fx:id="Bruxelles_Paris_R1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="281.0" layoutY="255.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="28.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bruxelles_Paris_R2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="263.0" layoutY="289.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="27.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Bruxelles_Paris_L">
+                    <Rectangle fx:id="Bruxelles_Paris_L1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="266.0" layoutY="251.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="27.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bruxelles_Paris_L2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="251.0" layoutY="283.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="30.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Brest_Pamplona">
+                    <Rectangle fx:id="Brest_Pamplona_4" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="175.0" layoutY="414.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Brest_Pamplona_3" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="172.0" layoutY="375.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-8.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brest_Pamplona_2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="159.0" layoutY="339.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-30.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brest_Pamplona_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="131.0" layoutY="317.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-71.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Paris_Pamplona_L">
+                    <Rectangle fx:id="Paris_Pamplona_L1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="223.0" layoutY="339.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="12.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Pamplona_L2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="214.0" layoutY="375.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="17.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Pamplona_L3" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="204.0" layoutY="409.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="25.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Pamplona_L4" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="185.0" layoutY="449.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="39.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Paris_Pamplona_R">
+                    <Rectangle fx:id="Paris_Pamplona_R1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="33.0"
+                               layoutX="238.0" layoutY="343.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="10.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Pamplona_R2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="33.0"
+                               layoutX="229.0" layoutY="381.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="15.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Pamplona_R3" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="33.0"
+                               layoutX="216.0" layoutY="415.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="27.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Pamplona_R4" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="33.0"
+                               layoutX="195.0" layoutY="451.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="33.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Pamplona_Marseille">
+                    <Rectangle fx:id="Pamplona_Marseille_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="209.0" layoutY="481.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-71.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Marseille_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="229.0" layoutY="461.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="24.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Marseille_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="261.0" layoutY="441.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-91.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Marseille_4" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="300.0" layoutY="450.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-60.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Paris_Marseille">
+                    <Rectangle fx:id="Paris_Marseille_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="251.0" layoutY="354.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Paris_Marseille_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="266.0" layoutY="390.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-35.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Marseille_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="293.0" layoutY="414.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-61.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Marseille_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="323.0" layoutY="441.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-32.2" stroke="BLACK"
+                               strokeType="INSIDE" width="11.0"/>
+                </Group>
+                <Group fx:id="Barcelona_Marseille">
+                    <Rectangle fx:id="Barcelona_Marseille_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="304.0" layoutY="479.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="66.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Barcelona_Marseille_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="214.0" layoutY="543.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="39.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Barcelona_Marseille_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="241.0" layoutY="516.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Barcelona_Marseille_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="272.0" layoutY="496.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="59.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Pamplona_Barcelona">
+                    <Rectangle fx:id="Pamplona_Barcelona_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="188.0" layoutY="538.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Barcelona_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="184.0" layoutY="507.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-6.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Madrid_Barcelona">
+                    <Rectangle fx:id="Madrid_Barcelona_2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="162.0" layoutY="566.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-86.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Madrid_Barcelona_1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="127.0" layoutY="566.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-88.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Pamplona_Madrid_R">
+                    <Rectangle fx:id="Pamplona_Madrid_R1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="160.0" layoutY="490.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="53.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Madrid_R2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="129.0" layoutY="516.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Madrid_R3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="106.0" layoutY="544.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Pamplona_Madrid_L">
+                    <Rectangle fx:id="Pamplona_Madrid_L1" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="152.0"
+                               layoutY="479.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="51.7" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Madrid_L2" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="122.0"
+                               layoutY="505.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="47.9" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Pamplona_Madrid_L3" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="91.0"
+                               layoutY="533.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="41.8" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Lisboa_Madrid">
+                    <Rectangle fx:id="Lisboa_Madrid_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="8.0" layoutY="549.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Lisboa_Madrid_2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="20.0" layoutY="525.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-88.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Lisboa_Madrid_3" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="57.0" layoutY="538.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-54.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Cadiz_Madrid">
+                    <Rectangle fx:id="Cadiz_Madrid_3" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="99.0" layoutY="576.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-47.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Cadiz_Madrid_2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="127.0" layoutY="607.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-19.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Cadiz_Madrid_1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="103.0" layoutY="628.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-108.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Lisboa_Cadiz">
+                    <Rectangle fx:id="Lisboa_Cadiz_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="23.0" layoutY="607.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-24.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Lisboa_Cadiz_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="49.0" layoutY="630.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-82.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Amsterdam_Essen">
+                    <Rectangle fx:id="Amsterdam_Essen_1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="307.0" layoutY="149.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="15.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Amsterdam_Essen_2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="334.0" layoutY="145.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-75.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Amsterdam_Essen_3" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="366.0" layoutY="165.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-38.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Paris_Zurich">
+                    <Rectangle fx:id="Paris_Zurich_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="273.0" layoutY="343.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-29.1" stroke="BLACK"
+                               strokeType="INSIDE" width="11.0"/>
+                    <Rectangle fx:id="Paris_Zurich_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="301.0" layoutY="369.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-60.9" stroke="BLACK"
+                               strokeType="INSIDE" width="11.0"/>
+                    <Rectangle fx:id="Paris_Zurich_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="337.0" layoutY="375.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-89.3" stroke="BLACK"
+                               strokeType="INSIDE" width="11.0"/>
+                </Group>
+                <Group fx:id="Zurich_Marseille">
+                    <Rectangle fx:id="Zurich_Marseille_2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="347.0" layoutY="434.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="13.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Zurich_Marseille_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="357.0" layoutY="397.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="16.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Bruxelles_Frankfurt">
+                    <Rectangle fx:id="Bruxelles_Frankfurt_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="307.0" layoutY="227.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-101.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bruxelles_Frankfurt_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="343.0" layoutY="238.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-43.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Amsterdam_Frankfurt">
+                    <Rectangle fx:id="Amsterdam_Frankfurt_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="326.0" layoutY="202.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Amsterdam_Frankfurt_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="352.0" layoutY="227.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-42.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Paris_Frankfurt_T">
+                    <Rectangle fx:id="Paris_Frankfurt_T1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="281.0" layoutY="306.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-108.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Frankfurt_T2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="315.0" layoutY="290.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-119.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Frankfurt_T3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="346.0" layoutY="270.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="55.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Paris_Frankfurt_B">
+                    <Rectangle fx:id="Paris_Frankfurt_B2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="322.0" layoutY="301.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="60.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Frankfurt_B3" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="353.0" layoutY="281.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="55.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Paris_Frankfurt_B1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="286.0" layoutY="318.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="71.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Frankfurt_Essen">
+                    <Rectangle fx:id="Frankfurt_Essen_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="407.0" layoutY="209.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-23.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Frankfurt_Essen_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="387.0" layoutY="232.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="65.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Frankfurt_Munchen">
+                    <Rectangle fx:id="Frankfurt_Munchen_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="380.0" layoutY="283.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-17.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Frankfurt_Munchen_2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="398.0" layoutY="305.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-104.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Munchen_Zurich">
+                    <Rectangle fx:id="Munchen_Zurich_1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="407.0" layoutY="327.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="48.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Munchen_Zurich_2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="382.0" layoutY="351.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Zurich_Venezia">
+                    <Rectangle fx:id="Zurich_Venezia_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="387.0" layoutY="383.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-65.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Zurich_Venezia_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="420.0" layoutY="400.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-60.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Munchen_Venezia">
+                    <Rectangle fx:id="Munchen_Venezia_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="433.0" layoutY="338.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-10.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Munchen_Venezia_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="441.0" layoutY="378.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-7.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Venezia_Roma">
+                    <Rectangle fx:id="Venezia_Roma_1" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="451.0"
+                               layoutY="431.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-12.3" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Venezia_Roma_2" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="458.0"
+                               layoutY="469.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-9.0" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Marseille_Roma">
+                    <Rectangle fx:id="Marseille_Roma_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="363.0" layoutY="455.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="54.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Marseille_Roma_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="392.0" layoutY="433.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="51.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Marseille_Roma_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="415.0" layoutY="446.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-34.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Marseille_Roma_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="438.0" layoutY="476.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-36.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Roma_Palermo">
+                    <Rectangle fx:id="Roma_Palermo_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="479.0" layoutY="510.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-61.900000000000006"
+                               stroke="BLACK" strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Roma_Palermo_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="507.0" layoutY="534.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-35.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Roma_Palermo_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="518.0" layoutY="573.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Roma_Palermo_4" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="503.0" layoutY="610.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="36.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Brindisi_Palermo">
+                    <Rectangle fx:id="Brindisi_Palermo_3" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="517.0" layoutY="618.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="36.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brindisi_Palermo_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="546.0" layoutY="553.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-18.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brindisi_Palermo_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="542.0" layoutY="588.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="43.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Roma_Brindisi">
+                    <Rectangle fx:id="Roma_Brindisi_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="487.0" layoutY="489.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="79.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Roma_Brindisi_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="522.0" layoutY="505.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-39.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="venezia_zagrab">
+                    <Rectangle fx:id="Venezia_Zagrab_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="472.0" layoutY="396.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-100.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Venezia_Zagrab_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="507.0" layoutY="401.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-53.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Wien_Zagrab">
+                    <Rectangle fx:id="Wien_Zagrab_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="535.0" layoutY="348.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Wien_Zagrab_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="533.0" layoutY="387.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Munchen_Wien">
+                    <Rectangle fx:id="Munchen_Wien_1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="448.0" layoutY="325.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-37.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Munchen_Wien_2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="483.0" layoutY="343.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-88.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Munchen_Wien_3" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="518.0" layoutY="330.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="48.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Frankfurt_Berlin_B">
+                    <Rectangle fx:id="Frankfurt_Berlin_B1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="400.0" layoutY="256.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="70.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Frankfurt_Berlin_B2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="436.0" layoutY="240.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="65.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Frankfurt_Berlin_B3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="470.0" layoutY="225.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="62.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Frankfurt_Berlin_T">
+                    <Rectangle fx:id="Frankfurt_Berlin_T1" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="392.0"
+                               layoutY="245.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="67.3" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Frankfurt_Berlin_T2" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="429.0"
+                               layoutY="228.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="65.2" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Frankfurt_Berlin_T3" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="461.0"
+                               layoutY="212.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="58.2" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Essen_Berlin">
+                    <Rectangle fx:id="Essen_Berlin_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="423.0" layoutY="183.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="96.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Essen_Berlin_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="459.0" layoutY="187.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-83.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Essen_KObenhavn_L">
+                    <Rectangle fx:id="Essen_KObenhavn_L1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="34.0"
+                               layoutX="394.0" layoutY="156.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="33.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Essen_Kobenhavn_L2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="415.0" layoutY="124.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="34.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Essen_Kobenhavn_L3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="437.0" layoutY="92.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="33.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Essen_Kobenhavn_R">
+                    <Rectangle fx:id="Essen_KObenhavn_R1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="34.0"
+                               layoutX="406.0" layoutY="163.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="31.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Essen_Kobenhavn_R2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="427.0" layoutY="132.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="31.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Essen_Kobenhavn_R3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="448.0" layoutY="101.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="32.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Kobenhavn_Stockholm_L">
+                    <Rectangle fx:id="Kobenhavn_Stockholm_L1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="474.0" layoutY="51.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="42.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kobenhavn_Stockholm_L2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="500.0" layoutY="25.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="47.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kobenhavn_Stockholm_L3" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="33.0"
+                               layoutX="532.0" layoutY="3.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="60.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Kobenhavn_Stockholm_R">
+                    <Rectangle fx:id="Kobenhavn_Stockholm_R1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="482.0" layoutY="62.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="41.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kobenhavn_Stockholm_R2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="510.0" layoutY="35.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="47.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kobenhavn_Stockholm_R3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="541.0" layoutY="14.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="60.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Stockholm_Petrograd">
+                    <Rectangle fx:id="Stockholm_Petrograd_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="582.0" layoutY="17.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-37.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="608.0" layoutY="11.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="51.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="645.0" layoutY="-2.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="682.0" layoutY="-2.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_5" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="720.0" layoutY="-2.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_6" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="757.0" layoutY="-2.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_7" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="794.0" layoutY="-2.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Stockholm_Petrograd_8" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="831.0" layoutY="5.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-65.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Berlin_Danzig">
+                    <Rectangle fx:id="Berlin_Danzig_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="492.0" layoutY="168.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="9.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Danzig_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="507.0" layoutY="131.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Danzig_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="540.0" layoutY="110.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="77.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Danzig_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="577.0" layoutY="109.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-77.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Danzig_Warszawa">
+                    <Rectangle fx:id="Danzig_Warszawa_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="626.0" layoutY="131.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-57.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Danzig_Warszawa_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="648.0" layoutY="163.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-11.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Berlin_Warszawa_T">
+                    <Rectangle fx:id="Berlin_Warszawa_T1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="513.0" layoutY="187.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="72.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Warszawa_T2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="549.0" layoutY="179.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="83.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Warszawa_T3" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="587.0" layoutY="177.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Warszawa_T4" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="625.0" layoutY="179.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-81.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Berlin_Warszawa_B">
+                    <Rectangle fx:id="Berlin_Warszawa_B1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="514.0" layoutY="202.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="70.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Warszawa_B2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="550.0" layoutY="195.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="83.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Warszawa_B3" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="587.0" layoutY="192.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="88.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Warszawa_B4" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="625.0" layoutY="195.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="98.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Berlin_Wien">
+                    <Rectangle fx:id="Berlin_Wien_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="496.0" layoutY="230.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-16.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Wien_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="509.0" layoutY="265.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-27.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Berlin_Wien_3" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="529.0" layoutY="297.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-35.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Wien_Budapest_T">
+                    <Rectangle fx:id="Wien_Budapest_T1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="571.0" layoutY="333.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-58.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Wien_Budapest_B">
+                    <Rectangle fx:id="Wien_Budapest_B1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="36.0"
+                               layoutX="563.0" layoutY="345.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-57.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Budapest_Zagrab">
+                    <Rectangle fx:id="Budapest_Zagrab_1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="577.0" layoutY="371.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Budapest_Zagrab_2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="553.0" layoutY="400.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Zagrab_Sarajevo">
+                    <Rectangle fx:id="Zagrab_Sarajevo_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="535.0" layoutY="445.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-8.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Zagrab_Sarajevo_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="555.0" layoutY="479.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-54.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Zagrab_Sarajevo_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="591.0" layoutY="484.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-109.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Budapest_Sarajevo">
+                    <Rectangle fx:id="Budapest_Sarajevo_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="601.0" layoutY="374.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-8.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Budapest_Sarajevo_2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="606.0" layoutY="412.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-8.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Budapest_Sarajevo_3" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="612.0" layoutY="450.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-7.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Warszawa_Wien">
+                    <Rectangle fx:id="Warszawa_Wien_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="641.0" layoutY="221.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="31.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Wien_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="620.0" layoutY="253.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="34.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Wien_3" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="595.0" layoutY="282.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="47.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Wien_4" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="567.0" layoutY="304.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="54.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sarajevo_Athina">
+                    <Rectangle fx:id="Sarajevo_Athina_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="616.0" layoutY="504.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="4.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sarajevo_Athina_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="615.0" layoutY="543.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="3.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sarajevo_Athina_3" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="611.0" layoutY="581.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="3.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sarajevo_Athina_4" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="636.0" layoutY="594.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-84.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Brindisi_Athina">
+                    <Rectangle fx:id="Brindisi_Athina_1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="560.0" layoutY="546.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-19.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brindisi_Athina_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="575.0" layoutY="581.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-22.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brindisi_Athina_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="603.0" layoutY="610.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-72.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Brindisi_Athina_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="641.0" layoutY="612.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="81.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Palermo_Smyrna">
+                    <Rectangle fx:id="Palermo_Smyrna_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="539.0" layoutY="631.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Palermo_Smyrna_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="576.0" layoutY="632.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Palermo_Smyrna_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="614.0" layoutY="633.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Palermo_Smyrna_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="651.0" layoutY="633.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Palermo_Smyrna_5" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="688.0" layoutY="633.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Palermo_Smyrna_6" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="726.0" layoutY="633.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Athina_Smyrna">
+                    <Rectangle fx:id="Athina_Smyrna_1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="692.0" layoutY="604.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="91.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Athina_Smyrna_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="730.0" layoutY="613.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="116.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sofia_Athina">
+                    <Rectangle fx:id="Sofia_Athina_3" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="657.0" layoutY="579.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-27.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sofia_Athina_2" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="650.0" layoutY="541.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="6.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sofia_Athina_1" arcHeight="5.0" arcWidth="5.0" fill="PINK" height="36.0"
+                               layoutX="665.0" layoutY="505.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="41.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sarajevo_Sofia">
+                    <Rectangle fx:id="Sarajevo_Sofia_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="643.0" layoutY="465.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="65.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sarajevo_Sofia_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="670.0" layoutY="463.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-24.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Danzig_Riga">
+                    <Rectangle fx:id="Danzig_Riga_1" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="609.0"
+                               layoutY="93.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="18.4" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Danzig_Riga_2" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="627.0"
+                               layoutY="57.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="35.1" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Danzig_Riga_3" arcHeight="5.0" arcWidth="5.0" height="33.0" layoutX="658.0"
+                               layoutY="33.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="70.6" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Riga_Petrograd">
+                    <Rectangle fx:id="Riga_Petrograd_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="714.0" layoutY="26.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Riga_Petrograd_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="752.0" layoutY="26.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Riga_Petrograd_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="788.0" layoutY="26.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Riga_Petrograd_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="825.0" layoutY="24.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Riga_Wilno">
+                    <Rectangle fx:id="Riga_Wilno_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="683.0" layoutY="51.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="9.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Riga_Wilno_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="688.0" layoutY="90.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-21.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Riga_Wilno_3" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="713.0" layoutY="121.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-54.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Riga_Wilno_4" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="746.0" layoutY="141.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-56.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Warszawa_Wilno">
+                    <Rectangle fx:id="Warszawa_Wilno_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="670.0" layoutY="169.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="25.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Wilno_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="700.0" layoutY="146.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="79.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Wilno_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="737.0" layoutY="153.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="124.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Petrograd_Wilno">
+                    <Rectangle fx:id="Petrograd_Wilno_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="843.0" layoutY="46.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="37.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Petrograd_Wilno_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="822.0" layoutY="78.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Petrograd_Wilno_3" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="800.0" layoutY="109.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Petrograd_Wilno_4" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="778.0" layoutY="140.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Petrograd_Moskva">
+                    <Rectangle fx:id="Petrograd_Moskva_4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="951.0" layoutY="117.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-5.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Petrograd_Moskva_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="941.0" layoutY="79.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-24.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Petrograd_Moskva_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="916.0" layoutY="48.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-48.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Petrograd_Moskva_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="883.0" layoutY="30.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-71.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Wilno_Smolensk">
+                    <Rectangle fx:id="Wilno_Smolensk_1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="790.0" layoutY="148.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Wilno_Smolensk_2" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="813.0" layoutY="133.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-54.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Wilno_Smolensk_3" arcHeight="5.0" arcWidth="5.0" fill="YELLOW" height="36.0"
+                               layoutX="843.0" layoutY="155.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-55.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Smolensk_Moskva">
+                    <Rectangle fx:id="Smolensk_Moskva_1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="896.0" layoutY="172.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-84.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Smolensk_Moskva_2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="932.0" layoutY="161.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-130.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Moskva_Kharkov">
+                    <Rectangle fx:id="Moskva_Kharkov_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="967.0" layoutY="170.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-25.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Moskva_Kharkov_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="980.0" layoutY="207.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-10.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Moskva_Kharkov_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="976.0" layoutY="247.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="15.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Moskva_Kharkov_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="958.0" layoutY="280.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="43.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Kyiv_Kharkov">
+                    <Rectangle fx:id="Kyiv_Kharkov_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="913.0" layoutY="310.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="70.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Kharkov_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="876.0" layoutY="316.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="92.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Kharkov_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="839.0" layoutY="304.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-60.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Kharkov_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="814.0" layoutY="275.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-18.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Wilno_Kyiv">
+                    <Rectangle fx:id="Wilno_Kyiv_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="805.0"
+                               layoutY="219.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" stroke="BLACK" strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Wilno_Kyiv_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="788.0"
+                               layoutY="183.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-53.9" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Warszawa_Kyiv">
+                    <Rectangle fx:id="Warszawa_Kyiv_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="670.0" layoutY="211.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-42.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Kyiv_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="701.0" layoutY="233.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-66.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Kyiv_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="739.0" layoutY="239.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-94.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Warszawa_Kyiv_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="776.0" layoutY="240.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-85.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Smolensk_Kyiv">
+                    <Rectangle fx:id="Smolensk_Kyiv_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="876.0" layoutY="196.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-16.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Smolensk_Kyiv_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="867.0" layoutY="234.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="45.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Smolensk_Kyiv_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="832.0" layoutY="249.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="95.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Kyiv_Budapest">
+                    <Rectangle fx:id="Kyiv_Budapest_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="776.0" layoutY="255.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="91.7" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Budapest_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="740.0" layoutY="255.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="86.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Budapest_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="701.0" layoutY="261.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="69.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Budapest_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="668.0" layoutY="276.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="64.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Budapest_5" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="636.0" layoutY="297.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="54.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Budapest_6" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="608.0" layoutY="323.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="41.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Kyiv_Bucuresti">
+                    <Rectangle fx:id="Kyiv_Bucuresti_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="785.0" layoutY="282.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="14.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Bucuresti_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="772.0" layoutY="318.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="18.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Bucuresti_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="761.0" layoutY="355.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="21.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Kyiv_Bucuresti_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="748.0" layoutY="391.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="16.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Budapest_Bucuresti">
+                    <Rectangle fx:id="Budapest_Bucuresti_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="620.0" layoutY="357.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-61.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Budapest_Bucuresti_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="653.0" layoutY="376.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-62.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Budapest_Bucuresti_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="685.0" layoutY="393.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-61.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Budapest_Bucuresti_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="720.0" layoutY="411.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-64.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Bucuresti_Sofia">
+                    <Rectangle fx:id="Bucuresti_Sofia_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="735.0" layoutY="446.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="9.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bucuresti_Sofia_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="710.0" layoutY="475.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="75.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Kharkov_Rostov">
+                    <Rectangle fx:id="Kharkov_Rostov_2" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="981.0" layoutY="328.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Kharkov_Rostov_1" arcHeight="5.0" arcWidth="5.0" fill="LIMEGREEN" height="36.0"
+                               layoutX="970.0" layoutY="303.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Rostov_Sochi">
+                    <Rectangle fx:id="Rostov_Sochi_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="978.0" layoutY="422.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="4.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Rostov_Sochi_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="980.0" layoutY="385.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Rostov_Sevastopol">
+                    <Rectangle fx:id="Rostov_Sevastopol_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="896.0" layoutY="408.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="8.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Rostov_Sevastopol_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="901.0" layoutY="370.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="7.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Rostov_Sevastopol_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="917.0" layoutY="345.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-82.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Rostov_Sevastopol_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="954.0" layoutY="352.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-82.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sevastopol_Sochi">
+                    <Rectangle fx:id="Sevastopol_Sochi_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="36.0"
+                               layoutX="949.0" layoutY="446.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-80.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Sochi_1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="913.0" layoutY="440.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-79.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Bucuresti_Sevastopol">
+                    <Rectangle fx:id="Bucuresti_Sevastopol_1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="768.0" layoutY="402.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="46.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bucuresti_Sevastopol_2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="800.0" layoutY="383.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-104.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bucuresti_Sevastopol_3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="839.0" layoutY="388.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="114.3" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bucuresti_Sevastopol_4" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="33.0"
+                               layoutX="870.0" layoutY="412.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-40.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Angora_Erzurum">
+                    <Rectangle fx:id="Angora_Erzurum_3" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="961.0"
+                               layoutY="611.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="-6.8" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Angora_Erzurum_2" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="937.0"
+                               layoutY="626.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="78.5" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Angora_Erzurum_1" arcHeight="5.0" arcWidth="5.0" height="36.0" layoutX="901.0"
+                               layoutY="620.0" onMouseClicked="#place_train_or_station" onMouseEntered="#highlight"
+                               onMouseExited="#no_highlight" rotate="121.5" stroke="BLACK" strokeType="INSIDE"
+                               width="12.0"/>
+                </Group>
+                <Group fx:id="Constantinople_Smyrna">
+                    <Rectangle fx:id="Constantinople_Smyrna_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="763.0" layoutY="607.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="24.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Constantinople_Smyrna_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="781.0" layoutY="574.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="27.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Constantinople_Angora">
+                    <Rectangle fx:id="Constantinople_Angora_1" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="822.0" layoutY="566.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-53.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Constantinople_Angora_2" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="852.0" layoutY="590.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-54.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sevastopol_Erzurum">
+                    <Rectangle fx:id="Sevastopol_Erzurum_1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="888.0" layoutY="462.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Erzurum_2" arcHeight="5.0" arcWidth="5.0" fill="PURPLE" height="36.0"
+                               layoutX="891.0" layoutY="500.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-5.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Erzurum_3" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="905.0" layoutY="540.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-35.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Erzurum_4" arcHeight="5.0" arcWidth="5.0" fill="GREY" height="33.0"
+                               layoutX="933.0" layoutY="567.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-57.8" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sevastopol_Constantinople">
+                    <Rectangle fx:id="Sevastopol_Constantinople_1" arcHeight="5.0" arcWidth="5.0" fill="PURPLE"
+                               height="36.0" layoutX="875.0" layoutY="462.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" stroke="BLACK"
+                               strokeType="INSIDE"
+                               width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Constantinople_2" arcHeight="5.0" arcWidth="5.0" fill="PURPLE"
+                               height="36.0" layoutX="863.0" layoutY="500.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Constantinople_3" arcHeight="5.0" arcWidth="5.0" fill="GREY"
+                               height="33.0"
+                               layoutX="839.0" layoutY="515.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-53.4" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sevastopol_Constantinople_4" arcHeight="5.0" arcWidth="5.0" fill="GREY"
+                               height="33.0"
+                               layoutX="813.0" layoutY="529.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="35.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Smyrna_Angora">
+                    <Rectangle fx:id="Smyrna_Angora_1" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="781.0" layoutY="634.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="90.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Smyrna_Angora_2" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="819.0" layoutY="635.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="85.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Smyrna_Angora_3" arcHeight="5.0" arcWidth="5.0" fill="ORANGE" height="36.0"
+                               layoutX="854.0" layoutY="622.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="63.9" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sochi_Erzurum">
+                    <Rectangle fx:id="Sochi_Erzurum_1" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="972.0" layoutY="479.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="6.6" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sochi_Erzurum_2" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="967.0" layoutY="517.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="10.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sochi_Erzurum_3" arcHeight="5.0" arcWidth="5.0" fill="RED" height="36.0"
+                               layoutX="962.0" layoutY="555.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="9.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Sofia_Constantinople">
+                    <Rectangle fx:id="Sofia_Constantinople_1" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="708.0" layoutY="502.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-60.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sofia_Constantinople_2" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="742.0" layoutY="520.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-62.1" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Sofia_Constantinople_3" arcHeight="5.0" arcWidth="5.0" fill="BLUE" height="33.0"
+                               layoutX="773.0" layoutY="537.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-63.0" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+                <Group fx:id="Bucuresti_Constantinople">
+                    <Rectangle fx:id="Bucuresti_Constantinople_1" arcHeight="5.0" arcWidth="5.0" fill="YELLOW"
+                               height="36.0"
+                               layoutX="757.0" layoutY="447.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-22.2" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bucuresti_Constantinople_11" arcHeight="5.0" arcWidth="5.0" fill="YELLOW"
+                               height="36.0" layoutX="771.0" layoutY="482.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-19.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                    <Rectangle fx:id="Bucuresti_Constantinople_12" arcHeight="5.0" arcWidth="5.0" fill="YELLOW"
+                               height="36.0" layoutX="786.0" layoutY="517.0" onMouseClicked="#place_train_or_station"
+                               onMouseEntered="#highlight" onMouseExited="#no_highlight" rotate="-21.5" stroke="BLACK"
+                               strokeType="INSIDE" width="12.0"/>
+                </Group>
+            </Group>
+
+            <ImageView fx:id="Card_1" fitHeight="134.0" fitWidth="248.0" layoutX="1007.0"
+                       onMouseClicked="#Put_in_hand_and_replace" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="Card_2" fitHeight="134.0" fitWidth="248.0" layoutX="1007.0" layoutY="134.0"
+                       onMouseClicked="#Put_in_hand_and_replace" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="Card_3" fitHeight="134.0" fitWidth="248.0" layoutX="1007.0" layoutY="268.0"
+                       onMouseClicked="#Put_in_hand_and_replace" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="Card_4" fitHeight="134.0" fitWidth="248.0" layoutX="1007.0" layoutY="402.0"
+                       onMouseClicked="#Put_in_hand_and_replace" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+            <ImageView fx:id="Card_5" fitHeight="134.0" fitWidth="248.0" layoutX="1007.0" layoutY="536.0"
+                       onMouseClicked="#Put_in_hand_and_replace" pickOnBounds="true" preserveRatio="true">
+            </ImageView>
+
+
+            <Circle fx:id="Edinburgh" fill="DODGERBLUE" layoutX="144.0" layoutY="34.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Brest" fill="DODGERBLUE" layoutX="109.0" layoutY="315.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="London" fill="DODGERBLUE" layoutX="214.0" layoutY="185.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Diepe" fill="DODGERBLUE" layoutX="201.0" layoutY="287.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Paris" fill="DODGERBLUE" layoutX="249.0" layoutY="328.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Bruxelles" fill="DODGERBLUE" layoutX="288.0" layoutY="243.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Amsterdam" fill="DODGERBLUE" layoutX="306.0" layoutY="194.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Pamplona" fill="DODGERBLUE" layoutX="183.0" layoutY="487.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Marseille" fill="DODGERBLUE" layoutX="340.0" layoutY="484.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Barcelona" fill="DODGERBLUE" layoutX="198.0" layoutY="583.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Madrid" fill="DODGERBLUE" layoutX="88.0" layoutY="574.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Cadiz" fill="DODGERBLUE" layoutX="82.0" layoutY="655.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="LIsboa" fill="DODGERBLUE" layoutX="20.0" layoutY="594.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Zurich" fill="DODGERBLUE" layoutX="369.0" layoutY="389.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Essen" fill="DODGERBLUE" layoutX="393.0" layoutY="203.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Frankfurt" fill="DODGERBLUE" layoutX="376.0" layoutY="274.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Munchen" fill="DODGERBLUE" layoutX="435.0" layoutY="319.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Roma" fill="DODGERBLUE" layoutX="460.0" layoutY="517.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Venezia" fill="DODGERBLUE" layoutX="452.0" layoutY="421.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Palermo" fill="DODGERBLUE" layoutX="498.0" layoutY="654.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Brindisi" fill="DODGERBLUE" layoutX="548.0" layoutY="543.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Berlin" fill="DODGERBLUE" layoutX="493.0" layoutY="216.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Kobenhavn" fill="DODGERBLUE" layoutX="465.0" layoutY="92.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Stockholm" fill="DODGERBLUE" layoutX="568.0" layoutY="13.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Wien" fill="DODGERBLUE" layoutX="552.0" layoutY="337.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Zagrab" fill="DODGERBLUE" layoutX="537.0" layoutY="436.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Danzig" fill="DODGERBLUE" layoutX="609.0" layoutY="137.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Warszawa" fill="DODGERBLUE" layoutX="656.0" layoutY="207.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Sarajevo" fill="DODGERBLUE" layoutX="624.0" layoutY="495.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Budapest" fill="DODGERBLUE" layoutX="599.0" layoutY="365.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Athina" fill="DODGERBLUE" layoutX="671.0" layoutY="624.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Smyrna" fill="DODGERBLUE" layoutX="759.0" layoutY="651.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Sofia" fill="DODGERBLUE" layoutX="691.0" layoutY="504.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Riga" fill="DODGERBLUE" layoutX="691.0" layoutY="42.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Petrograd" fill="DODGERBLUE" layoutX="861.0" layoutY="37.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Wilno" fill="DODGERBLUE" layoutX="770.0" layoutY="182.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Smolensk" fill="DODGERBLUE" layoutX="874.0" layoutY="186.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Moskva" fill="DODGERBLUE" layoutX="960.0" layoutY="161.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Kyiv" fill="DODGERBLUE" layoutX="811.0" layoutY="265.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Kharkov" fill="DODGERBLUE" layoutX="947.0" layoutY="320.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Bucuresti" fill="DODGERBLUE" layoutX="751.0" layoutY="438.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Constantinople" fill="DODGERBLUE" layoutX="803.0" layoutY="567.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Sevastopol" fill="DODGERBLUE" layoutX="892.0" layoutY="452.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Angora" fill="DODGERBLUE" layoutX="882.0" layoutY="624.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Erzurum" fill="DODGERBLUE" layoutX="963.0" layoutY="601.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Sochi" fill="DODGERBLUE" layoutX="982.0" layoutY="469.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+            <Circle fx:id="Rostov" fill="DODGERBLUE" layoutX="987.0" layoutY="374.0" onMouseEntered="#highlight"
+                    onMouseExited="#no_highlight" radius="9.0" stroke="BLACK" strokeType="INSIDE"/>
+
+            <Button fx:id="endGameButton" layoutX="3.0" layoutY="3.0" mnemonicParsing="false" onMouseClicked="#endGame"
+                    text="Go to Results!" visible="false">
+                <font>
+                    <Font name="SansSerif Bold" size="24.0"/>
+                </font>
+                <rotationAxis>
+                    <Point3D/>
+                </rotationAxis>
+            </Button>
+
+            <AnchorPane fx:id="ticketCardPane" layoutX="378.0" layoutY="64.0" prefHeight="134.0" prefWidth="250"
+                        style="-fx-background-color: grey;" visible="false">
+                <VBox fx:id="ticketVBOX" alignment="CENTER">
+                    <VBox fx:id="ticketCardsVBOX">
+                    </VBox>
+                    <AnchorPane>
+                        <ImageView fitHeight="34.0" fitWidth="69.0" onMouseClicked="#closeCardView">
+                            <Image url="@../menu/closeButton.png"/>
+                        </ImageView>
+                        <ImageView fx:id="goTicketButton" fitHeight="34.0" fitWidth="69.0" layoutX="181.0">
+                            <Image url="@../menu/goButton.png"/>
+                        </ImageView>
+                    </AnchorPane>
+                </VBox>
+            </AnchorPane>
+
+
+        </children>
+    </AnchorPane>
+    <HBox fx:id="PlayerHandInfoHbox">
+        <VBox fx:id="PlayerInfoVbox"/>
+        <AnchorPane>
+            <HBox fx:id="PlayerHandHbox"/>
+            <HBox fx:id="PlayerHandTicketHbox" visible="false"/>
+        </AnchorPane>
+        <HBox fx:id="TrainTicketDecksHbox"/>
+    </HBox>
+</VBox>

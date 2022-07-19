@@ -1,0 +1,16 @@
+.background {
+    -fx-background-image: url("../menu/background.png");
+}
+
+.text {
+
+    -fx-font-family: "Open Sans Regular";
+    -fx-font-size: 30;
+    -fx-text-fill: #C17817;
+}
+
+.vbox {
+    -fx-padding: 15;
+    -fx-spacing: 10;
+    -fx-alignment: "CENTER";
+}

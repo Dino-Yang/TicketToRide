@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="880.0" prefWidth="1280.0" styleClass="background" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ttr.Views.GameLoginView">
+
+    <children>
+
+        <VBox fx:id="mainMenu" layoutX="430.0" layoutY="210.0" prefHeight="638.0" prefWidth="421.0">
+            <ImageView onMouseClicked="#playClicked">
+                <image>
+                    <Image url="@../menu/playButton.png"/>
+                </image>
+            </ImageView>
+            <ImageView onMouseClicked="#settingsClicked">
+                <image>
+                    <Image url="@../menu/settingsButton.png"/>
+                </image>
+            </ImageView>
+            <ImageView onMouseClicked="#closeClicked">
+                <image>
+                    <Image url="@../menu/closeButton.png"/>
+                </image>
+            </ImageView>
+        </VBox>
+        <ImageView onMouseClicked="#rulesClicked" layoutX="0" layoutY="780">
+            <image>
+                <Image url="@../menu/button-rules.png"></Image>
+            </image>
+        </ImageView>
+
+        <VBox fx:id="settings" styleClass="vbox" layoutX="430.0" layoutY="121.0" prefHeight="638.0" prefWidth="421.0"
+              visible="false">
+            <Label styleClass="text">Volume</Label>
+            <Slider fx:id="musicSlider" onMouseReleased="#volumeChanged" value="20"/>
+            <Label styleClass="text">SFX</Label>
+            <Slider fx:id="sfxSlider" onMouseReleased="#sfxChanged" value="20"/>
+            <ImageView onMouseClicked="#backClicked">
+                <image>
+                    <Image url="@../menu/backButton.png"/>
+                </image>
+            </ImageView>
+        </VBox>
+
+        <VBox fx:id="login" layoutX="415.0" layoutY="312.0" styleClass="vbox" visible="false">
+            <Label fx:id="tokenLabel" styleClass="text" text="create or join game!"/>
+            <TextField fx:id="tokenTextField"/>
+            <ImageView onMouseClicked="#setGameToken">
+                <image>
+                    <Image url="@../menu/goButton.png"/>
+                </image>
+            </ImageView>
+        </VBox>
+
+    </children>
+
+    <stylesheets>
+        <URL value="@../css/gameLoginStart.css"/>
+    </stylesheets>
+
+</AnchorPane>

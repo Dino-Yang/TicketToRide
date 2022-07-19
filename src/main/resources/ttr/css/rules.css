@@ -1,0 +1,8 @@
+.background {
+    -fx-background-image: url("../menu/background.png");
+}
+
+
+.scroll-pane .viewport {
+    -fx-background-color: transparent;
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="880.0" prefWidth="1280.0" styleClass="background" xmlns="http://javafx.com/javafx/16"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="ttr.Views.GameStartView">
+    <children>
+        <VBox fx:id="list" alignment="CENTER" layoutX="430.0" layoutY="160.0" prefHeight="560.0" prefWidth="264.0">
+            <fx:define>
+                <ToggleGroup fx:id="group"/>
+            </fx:define>
+
+
+            <Label fx:id="playerCountLabel" styleClass="text">Current Players:</Label>
+            <Label fx:id="optionLabel" styleClass="text">Choose a color!</Label>
+            <AnchorPane prefHeight="139.0" prefWidth="440.0">
+                <ImageView fx:id="player_1" layoutX="117.0" layoutY="79.0" onMouseClicked="#playerSelect">
+                    <Image url="@../trains/train-red-Claimed.png"/>
+                </ImageView>
+                <ImageView fx:id="player_2" layoutX="14.0" layoutY="79.0" onMouseClicked="#playerSelect">
+                    <Image url="@../trains/train-blue-Claimed.png"/>
+                </ImageView>
+                <ImageView fx:id="player_3" layoutX="14.0" layoutY="14.0" onMouseClicked="#playerSelect">
+                    <Image url="@../trains/train-green-Claimed.png"/>
+                </ImageView>
+                <ImageView fx:id="player_4" layoutX="220.0" layoutY="14.0" onMouseClicked="#playerSelect">
+                    <Image url="@../trains/train-yellow-Claimed.png"/>
+                </ImageView>
+                <ImageView fx:id="player_5" layoutX="117.0" layoutY="14.0" onMouseClicked="#playerSelect">
+                    <Image url="@../trains/train-purple-Claimed.png"/>
+                </ImageView>
+            </AnchorPane>
+            <Label fx:id="nameLabel" visible="false" styleClass="text">What's your name?</Label>
+            <TextField fx:id="nameField" visible="false"/>
+            <ImageView fx:id="startButton" onMouseClicked="#startGame" visible="false">
+                <Image url="@../menu/playButton.png"/>
+            </ImageView>
+
+
+        </VBox>
+    </children>
+    <stylesheets>
+        <URL value="@../css/gameLoginStart.css"/>
+    </stylesheets>
+</AnchorPane>
